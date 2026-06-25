@@ -13,3 +13,8 @@ if (randomNumber <= 0.33){
 }
 }
 
+
+function getHumanChoice(){
+   let answer = prompt("Pick a choice");
+   return answer;
+}
