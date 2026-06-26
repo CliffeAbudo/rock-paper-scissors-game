@@ -1,6 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
 function getComputerChoice(){
   let randomNumber  = Math.random();
 
@@ -19,7 +16,9 @@ function getHumanChoice(){
    return answer;
 }
 
-
+function playGame(){
+    let humanScore = 0;
+    let computerScore = 0;
 
 function playRound(humanChoice,computerChoice){
 
@@ -47,7 +46,32 @@ function playRound(humanChoice,computerChoice){
     }
 
 }
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+
+for(let i = 0; i < 5; i++ ){
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    console.log(humanSelection, computerSelection);
+
+    playRound(humanSelection, computerSelection);
+
+}
+
+    //final result
+    console.log("Final Score:");
+    console.log("Human:", humanScore);
+    console.log("Computer:", computerScore);
+
+
+    if(humanScore > computerScore){
+        console.log("You win the game!");
+    }
+    else if(computerScore > humanScore){
+        console.log("Computer wins");
+    }
+    else{
+        console.log("This game ends in a draw");
+    }
+}
+playGame();
